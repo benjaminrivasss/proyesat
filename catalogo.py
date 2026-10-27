@@ -44,3 +44,21 @@ def grupo(nombre):
             return GRUPOS[i]
 
     return "Grupo fuera de rango"  
+
+def contar_por_grupo(registros):
+    """
+    Recibe una lista de registros y devuelve
+    un diccionario con la cantidad de satélites
+    de cada grupo.
+    """
+    conteos = {}
+
+    for registro in registros:
+        name = registro["OBJECT_NAME"]
+        empresa = grupo(name)
+        if empresa in conteos:
+            conteos[empresa] += 1
+        else:
+            conteos[empresa] = 1
+
+    return conteos
