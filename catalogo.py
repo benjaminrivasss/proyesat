@@ -37,4 +37,10 @@ def anio_lanzamiento(registro):
 
     return anio
 
-    
+
+def grupo(nombre):
+    for i in GRUPOS:
+        if nombre.startswith(i):
+            return GRUPOS[i]
+
+    return "Grupo fuera de rango"  
