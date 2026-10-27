@@ -62,3 +62,19 @@ def contar_por_grupo(registros):
             conteos[empresa] = 1
 
     return conteos
+
+def lanzamientos_por_anio(registros):
+    """
+    Devuelve un diccionario con la cantidad de
+    satélites lanzados en cada año.
+    """
+    conteos = {}
+
+    for registro in registros:
+       anio = anio_lanzamiento(registro)
+       if anio in conteos:
+            conteos[anio] += 1
+       else:
+            conteos[anio] = 1
+       
+    return conteos
