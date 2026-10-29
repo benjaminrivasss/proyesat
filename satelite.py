@@ -36,7 +36,7 @@ class Satelite:
 
     def __str__(self):
         """Devuelve una representacion de texto del satelite"""
-        return f'{self.nombre} ,|,{self.tipo_orbita()},|,{self.altitud_km}'
+        return f'{self.nombre} | {self.tipo_orbita()} | {self.altitud_km}'
 
 def crear_satelites(registros, momento):
      """Devuelve una lista de objetos Satelite con su posición en `momento`."""

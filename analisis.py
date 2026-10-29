@@ -12,7 +12,7 @@ def contar_por_tipo(satelites):
     }
 
     for satelite in satelites:
-        eltipo = satelite.tipo_orbita(satelite)
+        eltipo = satelite.tipo_orbita()
         conteos[eltipo] += 1
 
     return conteos
@@ -99,10 +99,10 @@ def resumen_por_grupo(satelites):
         maxima = max(altitudes)
 
         resumen[nombre_grupo]= {
-            'Cantidad':cantidad,
-            'Minima':minima,
-            'Media':media,
-            'Maxima':maxima
+            'cantidad':cantidad,
+            'minima':minima,
+            'media':media,
+            'maxima':maxima
         }
 
     return resumen

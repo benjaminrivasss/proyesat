@@ -44,7 +44,7 @@ def grupo(nombre):
         if nombre.startswith(i):
             return GRUPOS[i]
 
-    return "Grupo fuera de rango"  
+    return "Otros"  
 
 def contar_por_grupo(registros):
     """
