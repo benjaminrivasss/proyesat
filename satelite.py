@@ -1,4 +1,6 @@
+from funciones_base import crear_objeto_skyfield, obtener_posicion
 class Satelite:
+    """Inicializa los atributos del satélite."""
     def __init__(self,nombre, latitud, longitud, altitud_km):
         self.nombre = nombre
         self.latitud = latitud
@@ -35,3 +37,15 @@ class Satelite:
     def __str__(self):
         """Devuelve una representacion de texto del satelite"""
         return f'{self.nombre} ,|,{self.tipo_orbita()},|,{self.altitud_km}'
+
+def crear_satelites(registros, momento):
+     """Devuelve una lista de objetos Satelite con su posición en `momento`."""
+     satelites = []
+     for registro in registros:
+        objeto_skyfield = crear_objeto_skyfield(registro)
+        latitud, longitud, altitud_km = obtener_posicion(objeto_skyfield, momento)
+        if altitud_km >= 100:
+            nombre = registro["OBJECT_NAME"]
+            satelite = Satelite(nombre,latitud,longitud,altitud_km)
+            satelites.append(satelite)
+     return satelites
