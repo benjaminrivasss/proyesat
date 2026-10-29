@@ -39,6 +39,7 @@ def anio_lanzamiento(registro):
 
 
 def grupo(nombre):
+    """Devuelve el grupo al que pertenece un satélite."""
     for i in GRUPOS:
         if nombre.startswith(i):
             return GRUPOS[i]
